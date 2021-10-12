@@ -1,13 +1,10 @@
 <h1>TODO APP</h1>
 <div class="container" id="form-container">
-  <form (ngSubmit)="insertData()" [formGroup]="form">
+  <form  (ngSubmit)="insertData()" [formGroup]="form">
       <div class="form-group">
-          <input type="text" formControlName="todos" [(ngModel)]="todoclear"  class="form-control" placeholder="Enter Todo">
+          <input type="text" formControlName="title" [(ngModel)]="todoclear"  class="form-control" placeholder="Enter Todo">
       </div>
-      <!-- <div class="form-group">
-          <button class="btn btn-success btn-sm mt-3">Submit</button>
-      </div> -->
-  </form>
+ </form>
   <div class="table" id="todo-table">
     <thead>
         <tr>
@@ -18,8 +15,8 @@
     </thead>
     <tbody>
         <tr *ngFor="let todo of tasks ; let i = index">
-            <td>{{todo.todos}}</td>
-            <td> <input type="checkbox" [checked]="todo.isDone"> </td>
+            <td>{{todo.title}}</td>
+            <td> <input type="checkbox"  (change)="updateTodo(todo)" [(ngModel)]="todo.isDone"  [checked]="todo.isDone"> </td>
             <td>
                 <button class="btn btn-danger btn-sm" id="del-btn" (click)="deleteData(todo._id)">Delete</button>
             </td>

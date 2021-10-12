@@ -1,5 +1,5 @@
 export class Todo {
-    _id:any;
-    todos:any;
-    isDone:any;
+    _id?: string;
+    title?: string;
+    isDone?: boolean;
 }

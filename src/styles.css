@@ -3,3 +3,5 @@ body{
 	background: linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%);
 }
 @import '~ngx-toastr/toastr.css';
+html, body { height: 100%; }
+/* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
